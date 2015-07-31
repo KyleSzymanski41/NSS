@@ -1,0 +1,84 @@
+kyle@sandbox:~$ sudo apt-get update
+Ign http://security.ubuntu.com trusty-security InRelease
+Ign http://us.archive.ubuntu.com trusty InRelease
+Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Ign http://us.archive.ubuntu.com trusty-updates InRelease
+Get:2 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Ign http://us.archive.ubuntu.com trusty-backports InRelease
+Hit http://us.archive.ubuntu.com trusty Release.gpg
+Get:3 http://us.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://us.archive.ubuntu.com trusty-backports Release.gpg
+Get:4 http://security.ubuntu.com trusty-security/main Sources [90.7 kB]
+Hit http://us.archive.ubuntu.com trusty Release         
+Get:5 http://us.archive.ubuntu.com trusty-updates Release [63.5 kB]            
+Get:6 http://security.ubuntu.com trusty-security/restricted Sources [2,061 B]
+Get:7 http://security.ubuntu.com trusty-security/universe Sources [28.5 kB]    
+Get:8 http://security.ubuntu.com trusty-security/multiverse Sources [2,334 B]  
+Hit http://us.archive.ubuntu.com trusty-backports Release
+Get:9 http://security.ubuntu.com trusty-security/main amd64 Packages [326 kB]
+Hit http://us.archive.ubuntu.com trusty/main Sources    
+Hit http://us.archive.ubuntu.com trusty/restricted Sources                 
+Hit http://us.archive.ubuntu.com trusty/universe Sources                   
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources                
+Hit http://us.archive.ubuntu.com trusty/main amd64 Packages               
+Hit http://us.archive.ubuntu.com trusty/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://us.archive.ubuntu.com trusty/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages             
+Get:10 http://security.ubuntu.com trusty-security/restricted amd64 Packages [8,875 B]
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages                 
+Get:11 http://security.ubuntu.com trusty-security/universe amd64 Packages [112 kB]
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages             
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                    
+Get:12 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [3,683 B]
+Get:13 http://security.ubuntu.com trusty-security/main i386 Packages [311 kB]  
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en           
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en              
+Get:14 http://security.ubuntu.com trusty-security/restricted i386 Packages [8,846 B]
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en                
+Get:15 http://security.ubuntu.com trusty-security/universe i386 Packages [112 kB]
+Get:16 http://us.archive.ubuntu.com trusty-updates/main Sources [227 kB]     
+Get:17 http://us.archive.ubuntu.com trusty-updates/restricted Sources [3,433 B]
+Get:18 http://us.archive.ubuntu.com trusty-updates/universe Sources [130 kB]   
+Get:19 http://security.ubuntu.com trusty-security/multiverse i386 Packages [3,838 B]
+Get:20 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [5,138 B]
+Get:21 http://us.archive.ubuntu.com trusty-updates/main amd64 Packages [598 kB]
+Get:22 http://security.ubuntu.com trusty-security/main Translation-en [178 kB]
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Get:23 http://security.ubuntu.com trusty-security/universe Translation-en [65.6 kB]
+Get:24 http://us.archive.ubuntu.com trusty-updates/restricted amd64 Packages [11.8 kB]
+Get:25 http://us.archive.ubuntu.com trusty-updates/universe amd64 Packages [301 kB]
+Get:26 http://us.archive.ubuntu.com trusty-updates/multiverse amd64 Packages [12.0 kB]
+Get:27 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [580 kB] 
+Get:28 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [11.8 kB]
+Get:29 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [302 kB]
+Get:30 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [12.1 kB]
+Get:31 http://us.archive.ubuntu.com trusty-updates/main Translation-en [288 kB]
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en      
+Get:32 http://us.archive.ubuntu.com trusty-updates/universe Translation-en [160 kB]
+Hit http://us.archive.ubuntu.com trusty-backports/main Sources                 
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/universe Sources             
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/main amd64 Packages          
+Hit http://us.archive.ubuntu.com trusty-backports/restricted amd64 Packages    
+Hit http://us.archive.ubuntu.com trusty-backports/universe amd64 Packages      
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse amd64 Packages    
+Hit http://us.archive.ubuntu.com trusty-backports/main i386 Packages           
+Hit http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/universe i386 Packages       
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en          
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en      
+Ign http://us.archive.ubuntu.com trusty/main Translation-en_US                 
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US             
+Fetched 4,025 kB in 38s (105 kB/s)                                             
+Reading package lists... Done
+kyle@sandbox:~$ 
