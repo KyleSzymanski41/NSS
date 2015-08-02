@@ -1,0 +1,237 @@
+Kyle Szymanski
+Networks and Server Structures - Online
+Section 1
+WDD345-0
+
+Chapter 4 lynda video follow along.
+
+
+kyle@sandbox:~$ whoami
+kyle
+kyle@sandbox:~$ cd ~
+kyle@sandbox:~$ echo $HOME
+/home/kyle
+kyle@sandbox:~$ groups
+kyle adm cdrom sudo dip plugdev lpadmin sambashare vboxsf
+kyle@sandbox:~$ ls -la
+total 64
+drwxr-xr-x 7 kyle kyle 4096 Jul 30 15:26 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Jul 30 15:25 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+kyle@sandbox:~$ touch ownership.txt
+kyle@sandbox:~$ ls -la
+total 64
+drwxr-xr-x 7 kyle kyle 4096 Aug  1 18:47 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Jul 30 15:25 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-rw-rw-r-- 1 kyle kyle    0 Aug  1 18:47 ownership.txt
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+kyle@sandbox:~$ chown kyle:kyle ownership.txt
+kyle@sandbox:~$ chown :root ownership.txt
+chown: changing group of ‘ownership.txt’: Operation not permitted
+kyle@sandbox:~$ sudo chown :root ownership.txt
+[sudo] password for kyle: 
+kyle@sandbox:~$ ls -la
+total 64
+drwxr-xr-x 7 kyle kyle 4096 Aug  1 18:47 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Jul 30 15:25 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-rw-rw-r-- 1 kyle root    0 Aug  1 18:47 ownership.txt
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+kyle@sandbox:~$ chown kyle:kyle ownership.txt
+kyle@sandbox:~$ pwd
+/home/kyle
+kyle@sandbox:~$ mkdir test
+kyle@sandbox:~$ chmod ugo=rx ownership.txt
+kyle@sandbox:~$ ls -la
+total 68
+drwxr-xr-x 8 kyle kyle 4096 Aug  1 18:55 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Jul 30 15:25 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-r-xr-xr-x 1 kyle kyle    0 Aug  1 18:47 ownership.txt
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+drwxrwxr-x 2 kyle kyle 4096 Aug  1 18:55 test
+kyle@sandbox:~$ chmod u=rwx,g=rw,o=r ownership.txt
+kyle@sandbox:~$ ls -la ownership.txt
+-rwxrw-r-- 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ chmod ugo+x ownership.txt 
+kyle@sandbox:~$ ls -la ownership.txt
+-rwxrwxr-x 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ chmod a-x ownership.txt 
+kyle@sandbox:~$ ls -la ownership.txt 
+-rw-rw-r-- 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ chmod ugo-r ownership.txt 
+kyle@sandbox:~$ nano ownership.txt 
+kyle@sandbox:~$ chmod ugo=r ownership.txt 
+kyle@sandbox:~$ nano ownership.txt 
+kyle@sandbox:~$ chmod u+w ownership.txt
+kyle@sandbox:~$ ls -la
+total 68
+drwxr-xr-x 8 kyle kyle 4096 Aug  1 18:55 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Aug  1 19:07 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-rw-r--r-- 1 kyle kyle    0 Aug  1 18:47 ownership.txt
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+drwxrwxr-x 2 kyle kyle 4096 Aug  1 18:55 test
+kyle@sandbox:~$ chmod -R g+w test
+kyle@sandbox:~$ ls -la test/
+total 8
+drwxrwxr-x 2 kyle kyle 4096 Aug  1 18:55 .
+drwxr-xr-x 8 kyle kyle 4096 Aug  1 18:55 ..
+kyle@sandbox:~$ ls -la test
+total 8
+drwxrwxr-x 2 kyle kyle 4096 Aug  1 18:55 .
+drwxr-xr-x 8 kyle kyle 4096 Aug  1 18:55 ..
+kyle@sandbox:~$ chmod 755 ownership.txt
+kyle@sandbox:~$ ls -la ownership.txt
+-rwxr-xr-x 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ chmod 777 ownership.txt
+kyle@sandbox:~$ ls -la ownership.txt
+-rwxrwxrwx 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$  chmod 764 ownership.txt 
+kyle@sandbox:~$ ls -la ownership.txt
+-rwxrw-r-- 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ chmod 000 ownership.txt 
+kyle@sandbox:~$ ls -la ownership.txt
+---------- 1 kyle kyle 0 Aug  1 18:47 ownership.txt
+kyle@sandbox:~$ echo "hello world" >> ownership.txt 
+-bash: ownership.txt: Permission denied
+kyle@sandbox:~$ chmod 664 ownership.txt 
+kyle@sandbox:~$ echo "hello world" >> ownership.txt 
+kyle@sandbox:~$ cat ownership.txt
+hello world
+kyle@sandbox:~$ ls -la ownership.txt 
+-rw-rw-r-- 1 kyle kyle 12 Aug  1 19:15 ownership.txt
+kyle@sandbox:~$ sudo ls -la
+[sudo] password for kyle: 
+total 72
+drwxr-xr-x 8 kyle kyle 4096 Aug  1 18:55 .
+drwxr-xr-x 3 root root 4096 Jul 22 22:40 ..
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:20 Bash
+-rw------- 1 kyle kyle 2659 Jul 30 15:29 .bash_history
+-rw-r--r-- 1 kyle kyle  220 Jul 22 22:40 .bash_logout
+-rw-r--r-- 1 kyle kyle 3637 Jul 22 22:40 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 22 22:46 .cache
+drwxrwxr-x 2 kyle kyle 4096 Jul 23 15:06 challenges
+drwxrwxr-x 2 kyle kyle 4096 Jul 30 15:26 Cron
+-rw-rw-r-- 1 kyle kyle   11 Jul 30 15:23 kyle.txt
+-rw------- 1 kyle kyle  156 Jul 23 00:00 .mysql_history
+-rw------- 1 kyle kyle   72 Aug  1 19:07 .nano_history
+-rw------- 1 kyle kyle 1716 Jul 30 14:04 nano.save
+-rw-rw-r-- 1 kyle kyle   12 Aug  1 19:15 ownership.txt
+-rw-r--r-- 1 kyle kyle  675 Jul 22 22:40 .profile
+-rw-rw-r-- 1 kyle kyle   66 Jul 30 13:22 .selected_editor
+drwxrwxr-x 2 kyle kyle 4096 Jul 22 22:54 .ssh
+drwxrwxr-x 2 kyle kyle 4096 Aug  1 18:55 test
+kyle@sandbox:~$ sudo chown root ownership.txt 
+kyle@sandbox:~$ ls -la ownership.txt 
+-rw-rw-r-- 1 root kyle 12 Aug  1 19:15 ownership.txt
+kyle@sandbox:~$ sudo -k
+kyle@sandbox:~$ sudo chown kyle ownership.txt
+[sudo] password for kyle: 
+kyle@sandbox:~$ ls -la ownership.txt 
+-rw-rw-r-- 1 kyle kyle 12 Aug  1 19:15 ownership.txt
+kyle@sandbox:~$ sudo whoami
+root
+kyle@sandbox:~$ sudo -u kyle whoami
+kyle
+kyle@sandbox:~$ cat /etc/sudoers
+cat: /etc/sudoers: Permission denied
+kyle@sandbox:~$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+kyle@sandbox:~$ 
+
+
+
+
+
